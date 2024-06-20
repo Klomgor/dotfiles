@@ -1,18 +1,1 @@
-# Comments and blank lines are allowed
-
-RCS
-.+,v
-CVS
-\.\#.+
-\.cvsignore
-\.svn
-_darcs
-\.hg
-\.git
-\.gitignore
-\.gitmodules
-.+~
-\#.*\#
-^/README.*
-^/LICENSE.*
-^/COPYING
+.gitconfig
