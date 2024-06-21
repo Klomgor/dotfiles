@@ -1,6 +1,4 @@
-# Attention
-
-This is my very first attempt at creating a repository. I don't have any background in IT and I am still learning and experimenting with different configurations. Therefore, this repo will more likely have bugs, at least for now. If you're interested in using more robust and well-maintained dotfiles, I recommend checking out the resources section below.
+# Dotfiles
 
 ## Goal
 
@@ -139,14 +137,3 @@ chezmoi init --apply --verbose https://github.com/$GITHUB_USERNAME/dotfiles.git
 ```
 
 You can also integrate this step with an Ansible playbook to automate the installation of all the necessary software (to be added in a different repo).
-
-## Inspiration
-
-- [CristopherBiscard](https://github.com/ChristopherBiscardi/dotfiles)
-- [GeekMasher](https://github.com/GeekMasher/.dotfiles)
-- [andrew8088](https://github.com/andrew8088/dotfiles)
-- [christianlempa](https://github.com/christianlempa/dotfiles)
-- [geerlingguy](https://github.com/geerlingguy/dotfiles)
-- [logandonley](https://github.com/logandonley/dotfiles)
-- [marcogreiveldinger](https://github.com/marcogreiveldinger/.dotfiles)
-- [bitprophet](https://github.com/bitprophet/dotfiles)
