@@ -1,4 +1,4 @@
-name: Weekly Update Submodules
+name: Automatic Update Submodules
 on:
   push:
     branches:
