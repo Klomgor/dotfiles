@@ -1,3 +1,6 @@
 .cache
+.gitconfig
+.gitignore
+.gitmodules
 LICENSE
 README.md
