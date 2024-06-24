@@ -1,0 +1,18 @@
+[submodule ".zsh/plugins/fast-syntax-highlighting"]
+	path = .zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule ".zsh/plugins/zsh-autosuggestions"]
+	path = .zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".zsh/plugins/zsh-z"]
+	path = .zsh/plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z
+[submodule ".zsh/plugins/zsh-abbr"]
+	path = .zsh/plugins/zsh-abbr
+	url = https://github.com/olets/zsh-abbr
+[submodule ".zsh/plugins/pure"]
+	path = .zsh/plugins/pure
+	url = https://github.com/sindresorhus/pure.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
