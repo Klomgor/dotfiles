@@ -1,4 +1,4 @@
-name: Automatic Update Submodules
+name: Automatic Update
 on:
   push:
     branches:
