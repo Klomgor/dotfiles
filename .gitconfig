@@ -1,3 +1,10 @@
 [user]
 	name = Klomgor
 	email = 82770982+Klomgor@users.noreply.github.com
+[init]
+	templateDir = /usr/local/share/git-core/templates
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
