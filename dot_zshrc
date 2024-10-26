@@ -29,3 +29,8 @@ alias find="fzf"
 alias cd="z"
 alias cdc="z -"
 alias lzd='lazydocker'
+
+# Source environment variables from a secure location
+if [ -f ~/.env ]; then
+  export $(cat ~/.env | xargs)
+fi

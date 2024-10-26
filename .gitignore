@@ -1,1 +1,10 @@
 .DS_Store
+.env
+# Sensitive information
+*.key
+*.pem
+*.crt
+*.env
+*.enc
+*.p12
+*.pfx

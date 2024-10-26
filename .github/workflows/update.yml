@@ -27,3 +27,23 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  trufflehog:
+    name: TruffleHog Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: TruffleHog Scan
+        uses: trufflesecurity/trufflehog@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  validate-naming:
+    name: Validate Naming Conventions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Validate Naming
+        run: |
+          # Add your naming convention validation script here
+          echo "Validating naming conventions..."

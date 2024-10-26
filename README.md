@@ -137,3 +137,165 @@ chezmoi init --apply --verbose https://github.com/$GITHUB_USERNAME/dotfiles.git
 ```
 
 You can also integrate this step with an Ansible playbook to automate the installation of all the necessary software (to be added in a different repo).
+
+## Configuration Files and Scripts
+
+### .gitconfig
+
+The `.gitconfig` file contains the configuration settings for Git. It includes user information, such as name and email, and other settings like the template directory and Git LFS configuration.
+
+Example:
+
+```ini
+[user]
+    name = Your Name
+    email = your.email@example.com
+[init]
+    templateDir = /usr/local/share/git-core/templates
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+```
+
+### .github/workflows/update.yml
+
+The `.github/workflows/update.yml` file defines the GitHub Actions workflow for automatically updating the repository. It includes steps for checking out the repository, running Gitleaks for secret scanning, and other automated tasks.
+
+Example:
+
+```yaml
+name: Automatic Update
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### dot_zshrc
+
+The `dot_zshrc` file contains the configuration settings for the Zsh shell. It includes aliases, environment variables, and other settings to customize the shell environment.
+
+Example:
+
+```zsh
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
+
+test -e /Users/osama/.iterm2_shell_integration.zsh && source /Users/osama/.iterm2_shell_integration.zsh || true
+
+eval "$(gh copilot alias -- zsh)"
+
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
+
+source <(fzf --zsh)
+
+eval $(thefuck --alias)
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/.tldr.complete
+
+alias zshconfig="code ~/.zshrc"
+alias sourcezsh="source ~/.zshrc"
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+alias cat="bat"
+alias grep="rg"
+alias find="fzf"
+alias cd="z"
+alias cdc="z -"
+alias lzd='lazydocker'
+```
+
+## Examples and Use Cases
+
+### Example 1: Setting Up a New Machine
+
+To set up a new machine with the same configurations, follow these steps:
+
+1. Install Apple's Command Line Tools, Git, and Homebrew.
+2. Install chezmoi using Homebrew.
+3. Initialize chezmoi and apply the configurations from the remote repository.
+
+```zsh
+xcode-select --install
+brew install chezmoi
+chezmoi init --apply --verbose https://github.com/$GITHUB_USERNAME/dotfiles.git
+```
+
+### Example 2: Adding a New Dotfile
+
+To add a new dotfile to the chezmoi repository, follow these steps:
+
+1. Add the dotfile to the chezmoi local repository.
+
+```zsh
+chezmoi add ~/.new_dotfile
+```
+
+2. Commit and push the changes to the remote repository.
+
+```zsh
+chezmoi cd
+git add .
+git commit -m "Add new dotfile"
+git push
+exit
+```
+
+## Troubleshooting Common Issues
+
+### Issue 1: Git Not Found
+
+If you encounter an error indicating that Git is not found, ensure that Apple's Command Line Tools are installed. Run the following command to install them:
+
+```zsh
+xcode-select --install
+```
+
+### Issue 2: Permission Denied
+
+If you encounter a "Permission Denied" error, ensure that you have the necessary permissions to access the files and directories. You may need to use `sudo` for certain commands.
+
+### Issue 3: Gitleaks Scan Failure
+
+If the Gitleaks scan fails, check the scan results for any detected secrets. Remove the detected secrets from the repository and update the `.gitignore` file to prevent them from being committed in the future.
+
+```zsh
+chezmoi cd
+# Remove detected secrets
+git add .
+git commit -m "Remove detected secrets"
+git push
+exit
+```
