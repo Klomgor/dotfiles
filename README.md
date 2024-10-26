@@ -195,6 +195,26 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  trufflehog:
+    name: TruffleHog Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: TruffleHog Scan
+        uses: trufflesecurity/trufflehog@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  validate-naming:
+    name: Validate Naming Conventions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Validate Naming
+        run: |
+          # Add your naming convention validation script here
+          echo "Validating naming conventions..."
 ```
 
 ### dot_zshrc
@@ -235,6 +255,11 @@ alias find="fzf"
 alias cd="z"
 alias cdc="z -"
 alias lzd='lazydocker'
+
+# Source environment variables from a secure location
+if [ -f ~/.env ]; then
+  export $(cat ~/.env | xargs)
+fi
 ```
 
 ## Examples and Use Cases
@@ -299,3 +324,62 @@ git commit -m "Remove detected secrets"
 git push
 exit
 ```
+
+## Security Enhancements
+
+### Gitleaks
+
+Gitleaks is a tool for scanning your Git repository for secrets and sensitive information. It helps prevent secrets from being committed to the repository.
+
+To integrate Gitleaks into your GitHub Actions workflow, add the following job to your `.github/workflows/update.yml` file:
+
+```yaml
+scan:
+  name: gitleaks
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### TruffleHog
+
+TruffleHog is another tool for scanning your Git repository for secrets and sensitive information. It can be used alongside Gitleaks for enhanced security.
+
+To integrate TruffleHog into your GitHub Actions workflow, add the following job to your `.github/workflows/update.yml` file:
+
+```yaml
+trufflehog:
+  name: TruffleHog Scan
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: TruffleHog Scan
+      uses: trufflesecurity/trufflehog@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### Password Manager Integration
+
+Consider using a password manager integration with chezmoi for added security. This can help securely manage and store sensitive information, such as API keys and passwords.
+
+### Environment Variables
+
+Store sensitive information, such as API keys and passwords, in environment variables instead of hardcoding them in configuration files. Update the `dot_zshrc` file to source environment variables from a secure location, such as a `.env` file or a password manager.
+
+```zsh
+# Source environment variables from a secure location
+if [ -f ~/.env ]; then
+  export $(cat ~/.env | xargs)
+fi
+```
+
+### Access Controls
+
+Restrict access to the repository by using GitHub's built-in access control features, such as branch protection rules and required reviews. Enable two-factor authentication (2FA) for all contributors to enhance account security. Regularly review and update the access permissions for the repository to ensure that only authorized users have access.
