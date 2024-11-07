@@ -34,7 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: TruffleHog OSS
-        uses: trufflesecurity/trufflehog@v3.83.3
+        uses: trufflesecurity/trufflehog@v3.83.4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
   validate-naming:
