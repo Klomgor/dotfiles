@@ -1,0 +1,62 @@
+# TruffleHog configuration for dotfiles repository
+
+# Specify detectors to use
+detectors:
+  # Enable all built-in detectors by default
+  - all
+  
+# Additional options
+options:
+  # Only report verified secrets
+  only_verified: false
+  
+  # Maximum entropy for entropy-based scanning 
+  entropy:
+    max: 5.0
+    
+  # Concurrency settings
+  concurrency: 10
+
+# File extensions to ignore
+exclude_extensions:
+  - ".jpg"
+  - ".jpeg"
+  - ".png"
+  - ".gif"
+  - ".svg"
+  - ".webp"
+  - ".ico"
+  - ".woff"
+  - ".woff2"
+  - ".ttf"
+  - ".eot"
+
+# Paths to ignore
+exclude_paths:
+  - "README.md"
+  - "LICENSE"
+  - ".gitignore"
+  - ".chezmoiignore"
+  
+# Custom rules for dotfiles repositories
+custom_detectors:
+  # Detect .netrc credentials
+  netrc_credentials:
+    keywords:
+      - "machine"
+      - "login"
+      - "password"
+    path:
+      - "dot_netrc"
+      - ".netrc"
+    
+  # Detect SSH known hosts data
+  known_hosts:
+    path:
+      - "dot_ssh/known_hosts"
+      - ".ssh/known_hosts"
+  
+  # GPG keys
+  gpg_keys:
+    path:
+      - "private_dot_gnupg" 

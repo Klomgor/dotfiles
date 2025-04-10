@@ -1,0 +1,171 @@
+[user]
+	name = Klomgor
+	username = klomgor
+	email = 82770982+Klomgor@users.noreply.github.com
+	signingkey = 585939383191FE8B
+[init]
+	defaultBranch = main
+	templateDir = ~/.templates
+[core]
+	autocrlf = false
+	editor = nano
+	excludesfile = ~/.gitignore_global
+	ignorecase = false
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager = delta
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "https://github.com/"]
+	insteadOf = gh:
+[url "https://gist.github.com/"]
+	insteadOf = gist:
+[url "https://bitbucket.org/"]
+	insteadOf = bb:
+[commit]
+	template = ~/.templates/.gitmessage
+	gpgsign = true
+[tag]
+	gpgSign = true
+[pull]
+	rebase = false
+[push]
+	default = current
+	autoSetupRemote = true
+[branch]
+	autosetupmerge = true
+[merge]
+	autoStash = true
+	conflictStyle = diff3
+[rebase]
+	autoStash = true
+[checkout]
+	autostash = true
+[fetch]
+	prune = true
+[trim]
+	bases = master,main
+	protected = *production
+[advice]
+	detachedHead = false
+[diff]
+	tool = cursor
+[difftool "cursor"]
+	cmd = cursor --wait --diff $LOCAL $REMOTE
+[difftool]
+	prompt = false
+[delta]
+	features = line-numbers decorations
+	line-numbers = true
+[delta "decorations"]
+	minus-style = red bold normal
+	plus-style = green bold normal
+	minus-emph-style = white bold red
+	minus-non-emph-style = red bold normal
+	plus-emph-style = white bold green
+	plus-non-emph-style = green bold normal
+	file-style = yellow bold none
+	file-decoration-style = yellow box
+	hunk-header-style = magenta bold
+	hunk-header-decoration-style = magenta box
+	minus-empty-line-marker-style = normal normal
+	plus-empty-line-marker-style = normal normal
+	line-numbers-right-format = "{np:^4}│ "
+[color]
+	ui = true
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[safe]
+	bareRepository = explicit
+	directory = ~/Klomgor/*
+[include]
+	path = .gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+[credential]
+	helper = osxkeychain
+[rerere]
+	enabled = true
+	autoupdate = true
+[web]
+	browser = safari
+[alias]
+	# Basic shortcuts
+	a = add --all
+	c = commit
+	cm = commit -m
+	cam = commit -am
+	co = checkout
+	st = status
+	br = branch -av
+	p = push
+	sw = switch
+	# Log viewing
+	l = log --oneline
+	lg = log --oneline --graph --decorate
+	last = log -1 --stat
+	# Branch management
+	brname = !git branch | grep "^*" | awk '{ print $2 }'
+	ba = branch -a
+	bd = branch -d
+	bdd = branch -D
+	# Remote operations
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	up = !git remote update -p; git merge --ff-only @{u}
+	# Stash operations
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
+	# Advanced operations
+	undo = reset --soft HEAD^
+	amend = !git add .; git commit --amend --no-edit; git force; git status
+	force = push --force-with-lease
+	mirror = !git push mirror main
+	# Semantic commits
+	feat = "!f() { git add .; git commit -m \"feat: $1\"; git push; git status; }; f"
+	fix = "!f() { git add .; git commit -m \"fix: $1\"; git push; git status; }; f"
+	refactor = "!f() { git add .; git commit -m \"refactor: $1\"; git push; git status; }; f"
+	test = "!f() { git add .; git commit -m \"test: $1\"; git push; git status; }; f"
+	style = "!f() { git add .; git commit -m \"style: $1\"; git push; git status; }; f"
+	chore = "!f() { git add .; git commit -m \"chore: $1\"; git push; git status; }; f"
+	perf = "!f() { git add .; git commit -m \"perf: $1\"; git push; git status; }; f"
+	docs = "!f() { git add .; git commit -m \"docs: $1\"; git push; git status; }; f"
+	build = "!f() { git add .; git commit -m \"build: $1\"; git push; git status; }; f"
+	ci = "!f() { git add .; git commit -m \"ci: $1\"; git push; git status; }; f"
+	# Utility functions
+	aliases = config --get-regexp '^alias\\.'
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = !git ls-v | grep ^h | cut -c 3-
+	unassumeall = !git assumed | xargs git unassume
+	assumeall = !git status -s | awk {'print $2'} | xargs git assume
+	# Submodule operations
+	subadd = !sh -c 'git submodule add https://github.com/$1 $2/$(basename $1)' -
+	subrm = !sh -c 'git submodule deinit -f -- $1 && rm -rf .git/modules/$1 && git rm -f $1' -
+	subup = submodule update --init --recursive
+	subpull = submodule foreach 'git pull --tags -f origin master || git pull --tags -f origin main || git pull --tags -f origin development'

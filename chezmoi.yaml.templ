@@ -1,0 +1,110 @@
+# ~/.config/chezmoi/chezmoi.yaml
+# Chezmoi Configuration Template
+
+# Basic Configuration
+sourceDir: {{ .chezmoi.sourceDir }}
+verbose: false
+color: true
+
+# OS-Specific Configuration
+{{ if eq .chezmoi.os "darwin" }}
+  data:
+    ostype: darwin
+    arch: {{ .chezmoi.arch }}
+    hostname: {{ .chezmoi.hostname }}
+    darwin:
+      icloud: {{ .chezmoi.homeDir }}/Library/Mobile Documents/com~apple~CloudDocs
+      applications: /Applications
+      # Homebrew paths are no longer needed as Homebrew is managed by Nix
+      # brewPrefix: /opt/homebrew or /usr/local
+{{ end }}
+
+# Editor Configuration
+edit:
+  command: "cursor"
+  args: ["--wait"]
+  terminal:
+    command: "nano"
+    args: []
+
+# External Commands
+merge:
+  command: "nano"
+  args: []
+
+# Security Configuration
+encryption: "gpg"
+gpg:
+  recipient: '{{ .chezmoi.gpg_key | default "default-gpg-key" }}'
+  symmetric: false
+
+# Git Configuration
+git:
+  autoCommit: true
+  autoPush: true
+  commitMessageTemplate: 'feat: {{ .chezmoi.hostname }} - {{ .chezmoi.os }} - {{ .chezmoi.sourceDir }}'
+
+# Template Configuration
+template:
+  options:
+    left: "{{"
+    right: "}}"
+
+# Shell Configuration
+cd:
+  command: "zsh"
+
+# Diff Configuration
+diff:
+  command: "git"
+  args: ["diff", "--color"]
+  pager: "less -FRX"
+
+# macOS Specific Integrations
+{{ if eq .chezmoi.os "darwin" }}
+  hooks:
+    pre:
+      read-secrets:
+        command: "security"
+        args:
+          - "find-generic-password"
+          - "-a"
+          - "{{ .chezmoi.username }}"
+          - "-s"
+          - "chezmoi-secrets"
+          - "-w"
+    post:
+      reload-shell:
+        command: "source"
+        args: ["{{ .chezmoi.homeDir }}/.zshrc"]
+{{ end }}
+
+# External Scripts
+scriptEnv:
+  PATH: "{{ .chezmoi.homeDir }}/.local/bin:/usr/local/bin:/usr/bin:/bin"
+  EDITOR: "cursor --wait"
+
+# Status Command Configuration
+status:
+  exclude: ["scripts"]
+  include: ["**/dot_*", "**/executable_*"]
+
+# Update Configuration
+update:
+  recurseSubmodules: true
+  apply: true
+
+# File Management Mode
+mode: "file"
+
+# Modes for Specific Files
+modes:
+  "~/.config/git/.*": "symlink"
+  "~/.ssh/.*": "copy"
+  "~/.gnupg/.*": "file"
+
+# Umask for New Files
+umask: 0o022
+
+# Progress and Output
+progress: true

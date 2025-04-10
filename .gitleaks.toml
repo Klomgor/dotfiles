@@ -1,0 +1,68 @@
+# Gitleaks configuration for dotfiles repository
+title = "Gitleaks Config for Dotfiles"
+
+# Base gitleaks rules with customizations for dotfiles
+[allowlist]
+  description = "Allowlisted files"
+  paths = [
+    '''(.*?)(jpg|jpeg|png|gif|svg|webp)$''',
+    '''\.gitignore$''',
+    '''\.chezmoiignore$''',
+    '''LICENSE$''',
+    '''README\.md$''',
+    '''dot_zshrc\.tmpl$'''  # Allow template files as they shouldn't contain actual secrets
+  ]
+
+# Custom rules for dotfiles
+[[rules]]
+  id = "generic-api-key"
+  description = "Generic API Key"
+  regex = '''(?i)(['"]?[a-zA-Z0-9_-]*['"]?)(key|api|token|secret|passwd|password)(['"]?)(\s*[=:]\s*)(['"]?)([a-zA-Z0-9_\-\.=]{20,})(['"]?)'''
+  tags = ["key", "API", "generic"]
+  [rules.allowlist]
+    description = "Allowlist certain patterns that don't contain actual secrets"
+    regexes = [
+      '''PLACEHOLDER''',
+      '''example''',
+      '''template''',
+      '''INSERT_''',
+      '''YOUR_''',
+      '''\.\.\.'''
+    ]
+
+[[rules]]
+  id = "aws-access-key"
+  description = "AWS Access Key"
+  regex = '''(?i)(['"]?(?:aws)?_?(?:access)?_?(?:key)?_?(?:id)?['"]?)(\s*[=:]\s*)(['"]?[A-Z0-9]{20}['"]?)'''
+  tags = ["key", "AWS"]
+
+[[rules]]
+  id = "github-pat"
+  description = "GitHub Personal Access Token"
+  regex = '''gh[pousr]_[a-zA-Z0-9_]{36}'''
+  tags = ["key", "github"]
+
+[[rules]]
+  id = "private-key"
+  description = "Private key file"
+  regex = '''-----BEGIN ((RSA|DSA|EC|PGP|OPENSSH) )?PRIVATE KEY( BLOCK)?-----'''
+  tags = ["key", "private"]
+
+[[rules]]
+  id = "dotenv-file"
+  description = "Environment variables in .env-like files"
+  path = '''(?i).*\.env'''
+  tags = ["env", "credentials"]
+
+[[rules]]
+  id = "ssh-config"
+  description = "SSH config files may contain sensitive data"
+  path = '''(?i)(dot_)?ssh/config'''
+  tags = ["ssh", "config"]
+
+[[rules]]
+  id = "npmrc-auth"
+  description = "NPM auth tokens in .npmrc"
+  path = '''(?i)(dot_)?npmrc'''
+  regex = '''(?i)_auth|authToken|//registry\.npmjs\.org/:_authToken'''
+  tags = ["npm", "token"] 

@@ -1,0 +1,11 @@
+# .DS_Store (already in global .gitignore)
+.env
+# Sensitive information
+*.key
+*.pem
+*.crt
+*.env
+*.enc
+*.p12
+*.pfx
+dot_cursor/mcp.json

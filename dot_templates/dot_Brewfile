@@ -1,0 +1,294 @@
+brew 'act'          # Run GitHub Actions locally
+brew 'ansible-lint' # Ansible linter
+brew 'ansible'      # Automation
+brew 'aria2'        # Resuming download util (better wget)
+brew 'asciinema'    # Recording + sharing terminal sessions
+brew 'aspell'       # Spell check
+brew 'azure-cli'    # Azure command line
+brew 'bat'          # Better cat
+brew 'bc'           # Calculator
+brew 'bcrypt'       # Encryption utility, using blowfish
+brew 'bettercap'    # Network, scanning and monitoring
+brew 'bind'        # DNS tools
+brew 'bitwarden-cli'# Password manager CLI
+brew 'bmon'        # Bandwidth utilization monitor
+brew 'borgbackup'  # Encrypted, deduplicated backups
+brew 'bpytop'      # Resource monitoring (like htop)
+brew 'broot'        # Interactive directory navigation
+brew 'browsh'       # Web browser, in terminal
+brew 'buku'         # Bookmark manager
+brew 'cheat'        # Command cheatsheets
+brew 'chezmoi'      # Dotfile manager
+brew 'clamav'       # Open source virus scanning suite
+brew 'cmake-docs'   # CMake documentation
+brew 'cmake'        # Build system
+brew 'cmus'         # Music player
+brew 'cointop'      # Crypto prices and portfolio
+brew 'cowsay'       # Have an ASCII cow say your message
+brew 'ctags'        # Indexing of file info + headers
+brew 'ctop'         # Container metrics and monitoring
+brew 'ddgr'         # Web search, via DuckDuckGo
+brew 'diff-so-fancy'# Readable file compares (better diff)
+brew 'dnscrypt-proxy'# Proxy for using encrypted DNS
+brew 'docker'       # Containers
+brew 'dog'          # DNS lookup client (better dig)
+brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
+brew 'duf'          # Get info on mounted disks (better df)
+brew 'entr'         # Run command whenever file changes
+brew 'exa'          # Listing files with info (better ls)
+brew 'exiftool'     # Read, write and modify exif data
+brew 'figlet'       # Output text as big ASCII art text
+brew 'fzf'          # Fuzzy file finder and filtering
+brew 'gcc'          # GNU C++ compilers
+brew 'gh'           # Interact with GitHub PRs, issues, repos
+brew 'git-crypt'    # Transparent encryption for git repos
+brew 'git-extras'   # Extra git commands for common tasks
+brew 'git'          # Version control
+brew 'glances'      # Resource monitor + web and API
+brew 'glib'         # Core library
+brew 'go'           # Compiler for Go Lang
+brew 'goaccess'     # Web log analyzer and viewer
+brew 'gping'        # Interactive ping tool, with graph
+brew 'gradle'       # Build automation for Java
+brew 'handbrake'    # Video transcoder
+brew 'httpie'       # HTTP / API testing testing client
+brew 'hyperfine'    # Benchmarking for arbitrary commands
+brew 'iproute2mac'  # MacOS port of netstat and ifconfig
+brew 'jdupes'       # Duplicate file finder
+brew 'jq'           # JSON parser, output and query files
+brew 'just'         # Powerful command runner (better make)
+brew 'kdash'        # Kubernetes management
+brew 'khal'         # Calendar client
+brew 'lazydocker'   # Full Docker management app
+brew 'lazygit'      # Full Git management app
+brew 'lolcat'       # Make console output rainbow colored
+brew 'lporg'        # Backup and restore launchpad layout
+brew 'lua'          # Lua interpreter
+brew 'luarocks'     # Package manager for Lua
+brew 'lynis'        # Scan system for common security issues
+brew 'm-cli'        # All in one MacOS management CLI app
+brew 'most'         # Multi-window scroll pager (better less)
+brew 'mutt'         # Email client
+brew 'navi'         # Browse, search, read cheat sheets
+brew 'neofetch'     # Show system data and ditstro info
+brew 'neovim'       # Text editor
+brew 'newsboat'     # RSS / ATOM reader
+brew 'nmap'         # Port scanning
+brew 'node'         # Node.js
+brew 'node'         # Node.js runtime
+brew 'nvm'          # Switching node versions
+brew 'openjdk'      # Java development kit
+brew 'openssl'      # Cryptography and SSL/TLS Toolkit
+brew 'pandoc'       # Universal file converter
+brew 'pass'         # Password store
+brew 'pipes-sh'     # Cool terminal pipe screen saver
+brew 'procs'        # Advanced process viewer (better ps)
+brew 'pv'           # Pipe viewer, with animation options
+brew 'python'       # Python interpreter
+brew 'python@3.12'  # Python 3.12
+brew 'python@3.13'  # Python 3.13
+brew 'ranger'       # Directory browser
+brew 'rclone'       # Manage cloud storage
+brew 'ripgrep'      # Searching within files (better grep)
+brew 'rkhunter'     # Search / detect potential root kits
+brew 'rsync'        # Fast incremental file transfer
+brew 'rust'         # Rust language
+brew 'scrcpy'       # Display and control Android devices
+brew 'sd'           # RegEx find and replace (better sed)
+brew 'skhd'         # Hotkey daemon for macOS
+brew 'speedtest-cli'# Command line speed test utility
+brew 'task'         # Todo + task management
+brew 'terminal-notifier'# Trigger Mac notifications from terminal
+brew 'thefuck'      # Auto-correct miss-typed commands
+brew 'tig'          # Text-mode interface for git
+brew 'tldr'         # Community-maintained docs (better man)
+brew 'tmate'        # Share a terminal session via internet
+brew 'tmux'         # Term multiplexer
+brew 'tokei'        # Count lines of code (better cloc)
+brew 'trash-cli'    # Record and restore removed files
+brew 'tree'         # Directory listings as tree structure
+brew 'ttygif'       # Generate GIF from terminal commands + output
+brew 'watch'        # Run commands periorically
+brew 'watchman'     # Watch for changes and reload dev server
+brew 'wrk'          # HTTP benchmarking
+brew 'xsel'         # Copy paste access to the X clipboard
+brew 'yabai'        # Tiling window manager
+brew 'youtube-dl'   # YouTube video downloader
+brew 'zoxide'       # Auto-learning navigation (better cd)
+cask '1password'    # Password manager (proprietary)
+cask 'airbattery'   # AirPods battery
+cask 'alacritty'    # Terminal emulator
+cask 'alfred'       # Productivity tool
+cask 'alt-tab'      # Window switcher
+cask 'altserver'    # iOS sideloading
+cask 'android-sdk'  # Android software dev kit
+cask 'android-studio' # IDE for Android development
+cask 'anybar'       # Custom programmatic menubar icons
+cask 'arc'          # Browser
+cask 'audacity'     # Audio editor / recorder
+cask 'bartender'    # Menu bar organizer
+cask 'battle-net'   # Blizzard games
+cask 'beaver-notes' # Note taking app
+cask 'bettertouchtool'# Input customization
+cask 'bitwarden'    # Password manager
+cask 'blender'      # 3D creation suite
+cask 'boop'         # Text transformation tool
+cask 'brave-browser'# Privacy browser
+cask 'browserosaurus'# Browser picker
+cask 'burp-suite'   # Web security testing
+cask 'calibre'      # E-Book reader
+cask 'copyq'        # Clipboard manager (cross platform)
+cask 'coteditor'    # Just a simple plain-text editor
+cask 'cursor'       # Code editor
+cask 'cutter'       # Reverse engineering
+cask 'daisydisk'    # Disk space analyzer
+cask 'dangerzone'   # File sanitizer
+cask 'darktable'    # RAW photo editor
+cask 'deezer'       # Music streaming
+cask 'deskpad'      # Desktop notes
+cask 'discord'      # Chat & communities
+cask 'docker'       # Container platform
+cask 'epic-games'   # Epic store
+cask 'espanso'      # Live text expander (cross-platform)
+cask 'finicky'      # Website-specific default browser
+cask 'font-code-new-roman-nerd-font'
+cask 'font-comic-shanns-mono-nerd-font'
+cask 'font-fira-code-nerd-font'
+cask 'font-fira-code'
+cask 'font-geist-mono-nerd-font'
+cask 'font-hack-nerd-font'
+cask 'font-hack'
+cask 'font-inconsolata'
+cask 'font-jetbrains-mono'
+cask 'font-meslo-lg-nerd-font'
+cask 'font-symbols-only-nerd-font'
+cask 'freecad'      # 3D CAD modeler
+cask 'furtherance'    # Time tracking
+cask 'gimp'         # Photo editor
+cask 'github'         # GitHub desktop
+cask 'godot'          # Game engine
+cask 'gpg-suite'      # PGP encryption for emails and files
+cask 'hiddenbar'      # Hide / show annoying menubar icons
+cask 'iina'         # Modern media player
+cask 'inkscape'     # Vector editor
+cask 'iterm2'         # Better terminal emulator
+cask 'iterm2'         # Terminal
+cask 'jellyfin-media-player' # Media streaming
+cask 'joplin'         # Note taking
+cask 'kdiff3'         # Diff tool
+cask 'keka'           # File archiver and extractor
+cask 'kitty'          # Terminal emulator
+cask 'kodi'         # Media center
+cask 'krita'        # Digital painting
+cask 'league-of-legends' # MOBA game
+cask 'ledger-live'    # Crypto hardware wallet manager
+cask 'librewolf'      # Privacy Firefox
+cask 'little-snitch'  # Firewall app viewing / blocking traffic
+cask 'lulu'           # Firewall
+cask 'lunasea'        # System monitor
+cask 'maccy'          # Clipboard manager
+cask 'maestral'       # Dropbox client
+cask 'meetingbar'     # Meeting manager
+cask 'messenger'      # Facebook messenger
+cask 'microsoft-auto-update' # Office updater
+cask 'microsoft-excel'    # Spreadsheets
+cask 'microsoft-outlook'  # Email client
+cask 'microsoft-teams'# Team collaboration
+cask 'microsoft-word'     # Word processor
+cask 'minecraft'      # Building game
+cask 'mjolnir'        # Util for loading Lua automations
+cask 'monitorcontrol' # Display control
+cask 'mountain-duck'  # Mount remote storage locations
+cask 'multipass'      # Ubuntu VMs
+cask 'ngrok'        # Reverse proxy for sharing localhost
+cask 'notion'         # All-in-one workspace
+cask 'numi'           # Calculator
+cask 'obs'          # Screencasting / recording
+cask 'onedrive'       # Microsoft cloud
+cask 'onyx'           # System maintenance
+cask 'openemu'        # Game emulator
+cask 'openinterminal' # Finder button, opens directory in terminal
+cask 'orbstack'       # Container manager
+cask 'orion'          # Native browser
+cask 'owasp-zap'      # Web app security scanner
+cask 'pearcleaner'    # App uninstaller
+cask 'plex'         # Media server
+cask 'postman'        # HTTP API testing app
+cask 'prismlauncher'  # Minecraft launcher
+cask 'protonmail-bridge' # Decrypt ProtonMail emails
+cask 'protonvpn'      # Client app for ProtonVPN
+cask 'qlcolorcode'    # QL for code with highlighting
+cask 'qlimagesize'    # QL for size info for images
+cask 'qlmarkdown'     # QL for markdown files
+cask 'qlprettypatch'  # QL for patch / diff files
+cask 'qlstephen'      # QL for dev text files
+cask 'qlvideo'        # QL for video formats
+cask 'quicklook-csv'  # QL for tables in CSV format
+cask 'quicklook-json', args: { require_sha: false } # QL for JSON, with trees
+cask 'quicklookapk',   args: { require_sha: false } # QL for Android APKs
+cask 'raycast'        # Launcher
+cask 'raycast', args: { require_sha: false }  # Spotlight alternative
+cask 'reminders-menubar' # Reminders in menu
+cask 'santa'          # Binary authorization for security
+cask 'shotcut'      # Video editor
+cask 'shottr'         # Better screenshot utility
+cask 'signal'         # Link to encrypted mobile messenger
+cask 'skype'          # Video calls
+cask 'slack'          # Team chat
+cask 'sourcetree'     # Git client
+cask 'sourcetree'     # Git visual client
+cask 'spotify', args: { require_sha: false } # Propietary music streaming
+cask 'ssh-config-editor' # SSH config GUI
+cask 'standard-notes' # Encrypted synced notes
+cask 'stats'          # System monitor
+cask 'stats'          # System resource usage in menubar
+cask 'steam'          # Game platform
+cask 'telegram-desktop'# Messaging
+cask 'the-battle-for-wesnoth' # Strategy game
+cask 'the-unarchiver' # Archive utility
+cask 'tor-browser'    # Anonymous browser
+cask 'transmission' # Torrent client
+cask 'tresorit'       # Encrypted file backup (proprietary)
+cask 'utm'            # Virtual machines
+cask 'vagrant'        # Development environments
+cask 'veracrypt'      # File and volume encryption
+cask 'viber'          # Voice & video
+cask 'virtualbox'     # Virtualization
+cask 'visual-studio-code' # Code editor
+cask 'visual-studio-code' # Code editor
+cask 'vlc'          # Media player
+cask 'vmware-fusion'  # Virtual machines
+cask 'vorta'          # GUI for BorgBackup
+cask 'vscodium'       # Open source VSCode
+cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
+cask 'wechat'         # Chinese messaging
+cask 'whatsapp'       # Messaging
+cask 'widelands'      # Strategy game
+cask 'wireshark'      # Network analyzer + packet capture
+cask 'yattee'       # YouTube client
+cask 'zoom'           # Video conferencing
+cask_args appdir: '~/Applications', require_sha: true
+tap 'blacktop/tap'
+tap 'browsh-org/homebrew-browsh'
+tap 'daniele-rolli/beaver'
+tap 'dotenvx/brew'
+tap 'esolitos/ipa'
+tap 'espanso/espanso'
+tap 'felixkratz/formulae'
+tap 'hashicorp/tap'
+tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/core'
+tap 'homebrew/services'
+tap 'jandedobbeleer/oh-my-posh'
+tap 'jesseduffield/lazygit'
+tap 'kdash-rs/kdash'
+tap 'koekeishiya/formulae'
+tap 'lihaoyun6/tap'
+tap 'marsanne/cask'
+tap 'microsoft/git'
+tap 'minio/stable'
+tap 'netdcy/flowvision'
+tap 'olets/tap'
+tap 'pablopunk/brew'
+tap 'ptsochantaris/tap'

@@ -1,0 +1,26 @@
+# .zshrc: MacOS-specific shell configuration
+
+# Load modular configurations
+for config in ~/.config/zsh/conf.d/*.zsh; do
+    if [ -r "$config" ]; then
+        source "$config"
+    fi
+done
+
+# Source secure environment variables (if not already sourced in 70-local.zsh)
+if [ -f ~/.env ]; then
+    set -o allexport
+    source ~/.env
+    set +o allexport
+fi
+
+# Docker Desktop additions (if not already added in 70-local.zsh)
+fpath=(/Users/osama/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+
+# Load completions
+fpath=(/run/current-system/sw/share/zsh/site-functions $fpath)
+
+# Initialize zsh-completions
+autoload -U compinit && compinit

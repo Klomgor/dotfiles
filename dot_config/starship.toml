@@ -1,0 +1,110 @@
+# ~/.config/starship.toml
+
+add_newline = false
+command_timeout = 1000
+format = """$os$username$hostname$kubernetes$directory$git_branch$git_status$cmd_duration$status$line_break$character"""
+
+[character]
+success_symbol = '["](bold green)'
+error_symbol = '["](bold red)'
+vimcmd_symbol = '["](bold green)'
+
+# ---
+
+[os]
+format = '[$symbol](bold white) '
+disabled = false
+
+[os.symbols]
+Windows = ' '
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+
+# ---
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = 'on [$hostname](bold yellow) '
+disabled = false
+
+[directory]
+truncation_length = 1
+truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only_style = '197'
+read_only = '  '
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+[git_branch]
+symbol = ' '
+format = 'via [$symbol$branch]($style)'
+truncation_symbol = '…/'
+style = 'bold green'
+
+[git_status]
+format = '([ \( $all_status$ahead_behind\)]($style) )'
+style = 'bold green'
+conflicted = '[ confliced=${count}](red) '
+up_to_date = '[󰘽 up-to-date](green) '
+untracked = '[󰋗 untracked=${count}](red) '
+ahead = ' ahead=${count}'
+diverged = ' ahead=${ahead_count}  behind=${behind_count}'
+behind = ' behind=${count}'
+stashed = '[ stashed=${count}](green) '
+modified = '[󰛿 modified=${count}](yellow) '
+staged = '[󰐗 staged=${count}](green) '
+renamed = '[󱍸 renamed=${count}](yellow) '
+deleted = '[󰍶 deleted=${count}](red) '
+
+[cmd_duration]
+min_time = 2000
+format = 'took [$duration](bold yellow) '
+show_milliseconds = false
+
+[status]
+disabled = false
+format = '[$status]($style) '
+
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
+detect_files = ['k8s', 'kubernetes', 'Dockerfile', 'docker-compose.yml']
+
+# Language/Tool Status
+[docker_context]
+disabled = false
+format = 'via [🐋 $context](blue bold) '
+
+[terraform]
+disabled = false
+format = 'via [💠 $workspace]($style) '
+
+[python]
+disabled = false
+format = 'via [🐍 $version]($style) '
+detect_extensions = ['py']
+
+[nodejs]
+disabled = false
+format = 'via [⬢ $version](green bold) '
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
+
+[ruby]
+disabled = false
+format = 'via [💎 $version](red bold) '
+detect_extensions = ['rb']
+
+# Disabled Modules
+[vagrant]
+disabled = true
+
+[helm]
+disabled = true

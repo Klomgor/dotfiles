@@ -1,0 +1,54 @@
+# Development Cheatsheet Template
+# Tags: development, code, YOUR_LANGUAGE
+
+# Description
+# -----------
+# Brief description of what this cheatsheet covers
+
+# Basic Usage
+# ----------
+command_name [options] <required_arg> [optional_arg]
+
+# Common Options
+# -------------
+-h, --help          Show help message
+-v, --version       Show version
+-o, --output FILE   Output to file
+
+# Examples
+# --------
+# Example 1: Basic usage
+command_name arg1
+# Output: expected result
+
+# Example 2: Advanced usage
+command_name --option value arg1
+# Output: expected result
+
+# Tips & Tricks
+# ------------
+# - Tip 1: Useful tip about the command
+# - Tip 2: Another useful tip
+
+# Common Patterns
+# --------------
+# Pattern 1: Description
+pattern_command arg1 | next_command
+
+# Pattern 2: Description
+pattern_command arg2 > output.file
+
+# Debugging
+# ---------
+# Common issue 1: How to fix
+debug_command --verbose
+
+# Common issue 2: How to fix
+debug_command --log-level=debug
+
+# See Also
+# --------
+# Related commands or documentation:
+# - related_command1
+# - related_command2
+# Documentation: URL or man page reference

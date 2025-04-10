@@ -1,0 +1,42 @@
+{
+    "Verbose": false,
+    "Debug": false,
+    "IgnoreDefaults": false,
+    "SpacesAftertabs": false,
+    "NoColor": false,
+    "Exclude": [
+        "node_modules/*",
+        "dist/*",
+        "build/*",
+        ".git/*",
+        "*.min.js",
+        "*.bundle.js",
+        "vendor/*",
+        "*.pyc",
+        "__pycache__/*",
+        ".venv/*",
+        "venv/*",
+        "*.log"
+    ],
+    "AllowedContentTypes": [
+        "text/plain",
+        "text/x-python",
+        "text/javascript",
+        "text/typescript",
+        "text/html",
+        "text/css",
+        "text/yaml",
+        "text/markdown",
+        "application/json"
+    ],
+    "PassedFiles": [],
+    "Disable": {
+        "EndOfLine": false,
+        "Indentation": false,
+        "InsertFinalNewline": false,
+        "TrimTrailingWhitespace": false,
+        "MaxLineLength": false
+    },
+    "ShowLintReport": true,
+    "DryRun": false
+}

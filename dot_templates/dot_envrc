@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# Load environment type
+export NODE_ENV="${NODE_ENV:-development}"
+export ENVIRONMENT="${ENVIRONMENT:-local}"
+
+# Project info
+export PROJECT_ROOT="$(pwd)"
+export PROJECT_NAME="${PROJECT_NAME:-$(basename $PROJECT_ROOT)}"
+
+# Load environment variables (if they exist)
+[ -f .env ] && dotenv
+[ -f ".env.${ENVIRONMENT}" ] && dotenv ".env.${ENVIRONMENT}"
+
+# Path management
+PATH_add_if_exists() {
+  [ -d "$1" ] && PATH_add "$1"
+}
+
+PATH_add_if_exists "bin"
+PATH_add_if_exists "node_modules/.bin"
+
+# Uncomment and modify the sections you need:
+
+# === Node.js ===
+#if [ -f package.json ]; then
+#  [ -f .nvmrc ] && use nvm
+#  [ -f .node-version ] && use node
+#fi
+
+# === Python ===
+#if [ -f pyproject.toml ]; then
+#  layout poetry
+#elif [ -f Pipfile ]; then
+#  layout pipenv
+#elif [ -f requirements.txt ]; then
+#  layout python
+#fi
+
+# === Ruby ===
+#[ -f Gemfile ] && use ruby
+
+# === Go ===
+#[ -f go.mod ] && layout go
+
+# === Rust ===
+#[ -f Cargo.toml ] && use rust
+
+# === Java ===
+#[ -f pom.xml ] && use java
+
+# === Docker ===
+#if [ -f docker-compose.yml ]; then
+#  export COMPOSE_FILE="docker-compose.yml"
+#  [ -f "docker-compose.${ENVIRONMENT}.yml" ] && \
+#    export COMPOSE_FILE="${COMPOSE_FILE}:docker-compose.${ENVIRONMENT}.yml"
+#fi
+
+# === Nix ===
+#if nix flake show &> /dev/null; then
+#  use flake
+#elif [ -f shell.nix ]; then
+#  use nix
+#fi
+
+# Load local overrides (if they exist)
+[ -f .envrc.local ] && source_env .envrc.local
+
+# Print environment info (only if logging is enabled)
+[ "$DIRENV_LOG_FORMAT" != "" ] && log_status "Environment loaded for $PROJECT_NAME ($ENVIRONMENT)"

@@ -1,0 +1,29 @@
+---
+# Performance settings
+:backtrace: false
+:benchmark: false
+:bulk_threshold: 1000
+:verbose: true
+
+# Security: Use only HTTPS sources
+:sources:
+- https://rubygems.org/
+
+# Source management
+:update_sources: true
+
+# Installation settings
+gem: --no-document --no-user-install --no-post-install-message
+install: --no-document --no-user-install --bindir /usr/local/bin
+update: --no-document --no-user-install
+
+# Network settings
+:ssl_verify_mode: 0
+:concurrent_downloads: 8
+
+# Additional security measures
+:trust_policy: HighSecurity
+
+# Cache settings
+:cache_dir: ~/.gem/cache
+:cache_file: ~/.gem/cache

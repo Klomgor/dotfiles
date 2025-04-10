@@ -1,0 +1,33 @@
+# Configuration for curl
+# For more info, see: https://everything.curl.dev/
+
+# When following a redirect, automatically set the previous URL as referrer
+referer = ";auto"
+
+# Wait 60 seconds before timing out
+connect-timeout = 60
+
+# Retry 3 times if the connection fails
+retry = 3
+retry-delay = 2
+
+# Use a custom user agent
+user-agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X)"
+
+# Follow redirects
+location
+
+# Create necessary directory components when downloading
+create-dirs
+
+# Show error messages
+show-error
+
+# Show progress meter
+progress-bar
+
+# When saving a file, use the remote file's name
+remote-name-all
+
+# Use HTTP2 when possible
+http2

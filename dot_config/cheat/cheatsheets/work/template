@@ -1,0 +1,64 @@
+# Work-Related Cheatsheet Template
+# Tags: work, private, YOUR_SYSTEM
+
+# System/Tool Information
+# ---------------------
+# Name: System or tool name
+# Version: Applicable versions
+# Environment: Production/Staging/Development
+
+# Access & Authentication
+# ---------------------
+# Login/Access command (replace with actual commands)
+login_command --user USER --endpoint ENDPOINT
+
+# Common Tasks
+# -----------
+# Task 1: Description
+task1_command --option value
+
+# Task 2: Description
+task2_command --flag
+
+# Monitoring & Maintenance
+# ----------------------
+# Check status
+status_command --service SERVICE_NAME
+
+# View logs
+log_command --level ERROR --service SERVICE_NAME
+
+# Troubleshooting
+# --------------
+# Issue 1: Common problem description
+diagnostic_command --verbose
+
+# Issue 2: Another common problem
+fix_command --repair
+
+# Security Notes
+# -------------
+# - Security consideration 1
+# - Security consideration 2
+# - Required permissions/roles
+
+# Backup & Recovery
+# ---------------
+# Backup procedure
+backup_command --type full --destination /path/to/backup
+
+# Recovery procedure
+restore_command --source /path/to/backup
+
+# Contact Information
+# -----------------
+# Team: Responsible team
+# Slack: #channel-name
+# Email: team@company.com
+# Wiki: Internal documentation link
+
+# Change Management
+# ---------------
+# Required approvals
+# Change window
+# Rollback procedure

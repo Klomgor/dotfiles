@@ -1,0 +1,40 @@
+{
+  "DISABLED_PLUGINS": [],
+  "INSTALLED_PLUGINS": [
+    "kolibri.plugins.epub_viewer",
+    "kolibri.plugins.app",
+    "kolibri.plugins.media_player",
+    "kolibri.plugins.coach",
+    "kolibri.plugins.pdf_viewer",
+    "kolibri.plugins.slideshow_viewer",
+    "kolibri.plugins.default_theme",
+    "kolibri.plugins.learn",
+    "kolibri.plugins.perseus_viewer",
+    "kolibri.plugins.device",
+    "kolibri.plugins.user_auth",
+    "kolibri.plugins.html5_viewer",
+    "kolibri_app",
+    "kolibri.plugins.setup_wizard",
+    "kolibri.plugins.facility",
+    "kolibri.plugins.user_profile"
+  ],
+  "PLUGIN_VERSIONS": {
+    "kolibri.plugins.app": "0.17.3",
+    "kolibri.plugins.coach": "0.17.3",
+    "kolibri.plugins.default_theme": "0.17.3",
+    "kolibri.plugins.device": "0.17.3",
+    "kolibri.plugins.epub_viewer": "0.17.3",
+    "kolibri.plugins.facility": "0.17.3",
+    "kolibri.plugins.html5_viewer": "0.17.3",
+    "kolibri.plugins.learn": "0.17.3",
+    "kolibri.plugins.media_player": "0.17.3",
+    "kolibri.plugins.pdf_viewer": "0.17.3",
+    "kolibri.plugins.perseus_viewer": "0.17.3",
+    "kolibri.plugins.setup_wizard": "0.17.3",
+    "kolibri.plugins.slideshow_viewer": "0.17.3",
+    "kolibri.plugins.user_auth": "0.17.3",
+    "kolibri.plugins.user_profile": "0.17.3",
+    "kolibri_app": "0.4.3"
+  },
+  "UPDATED_PLUGINS": []
+}

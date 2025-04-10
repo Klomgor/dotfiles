@@ -1,0 +1,39 @@
+# Personal Cheatsheet Template
+# Tags: personal, private, YOUR_CATEGORY
+
+# Quick Reference
+# -------------
+# Brief description of what this cheatsheet is for
+
+# Common Commands
+# -------------
+# Purpose: Description
+command1 arg1 arg2
+
+# Purpose: Description
+command2 --option value
+
+# Shortcuts/Aliases
+# --------------
+alias_name='full_command --with options'
+
+# Custom Scripts
+# ------------
+function_name() {
+    # Script content
+    command1 "$1"
+    command2 "$2"
+}
+
+# Personal Notes
+# ------------
+# - Note 1: Important reminder
+# - Note 2: Useful tip
+# - Note 3: Reference link
+
+# Related Resources
+# --------------
+# - Link 1: Description
+# - Link 2: Description
+
+# Last Updated: YYYY-MM-DD
