@@ -132,16 +132,34 @@ chezmoi apply
 This repository uses GitHub Actions for several automated tasks:
 
 1. **Security Scanning**: Detects secrets and sensitive information
+   - Uses GitLeaks to check for hardcoded secrets using pattern matching
+   - Uses TruffleHog for entropy analysis to detect potential secrets
+
 2. **Linting**: Ensures code quality with Super-linter
+   - Validates YAML, JSON, Markdown, Bash, and Zsh files
+   - Uses caching to speed up the process
+
 3. **Configuration Testing**: Validates chezmoi configuration
+   - Performs a dry run of chezmoi initialization
+   - Tests template rendering
+   - Validates configuration structure
+
 4. **Automated Updates**: Optionally updates machines on schedule
+   - Can be configured to update remote machines via SSH
+   - Runs a simulation before making any changes
+
+5. **Notifications**: Creates GitHub issues for workflow failures
+   - Automatically reports any issues in the pipeline
+   - Includes links to failed workflows for easier debugging
 
 The automation pipeline runs:
 
 - On every push to main
 - On pull requests
 - Daily at 7:00 AM UTC
-- Manually when triggered
+- Manually when triggered via the GitHub Actions UI
+
+All workflows are defined in the `.github/workflows/update.yaml` file.
 
 ## 🧑‍💻 Major Configurations
 
