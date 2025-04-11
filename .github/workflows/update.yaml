@@ -70,7 +70,7 @@ jobs:
       # Store scan logs as artifacts
       - name: Upload security scan results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-scan-logs
           path: security-logs/
