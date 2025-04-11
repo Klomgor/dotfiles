@@ -41,7 +41,7 @@ jobs:
       - name: Run trufflehog
         id: trufflehog
         if: steps.gitleaks.outcome == 'success'
-        uses: trufflesecurity/trufflehog@v3.83.4
+        uses: trufflesecurity/trufflehog@v3.88.23
         with:
           path: .
         env:
