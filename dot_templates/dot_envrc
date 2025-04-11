@@ -5,8 +5,9 @@ export NODE_ENV="${NODE_ENV:-development}"
 export ENVIRONMENT="${ENVIRONMENT:-local}"
 
 # Project info
-export PROJECT_ROOT="$(pwd)"
-export PROJECT_NAME="${PROJECT_NAME:-$(basename $PROJECT_ROOT)}"
+export PROJECT_ROOT
+PROJECT_ROOT="$(pwd)"
+export PROJECT_NAME="${PROJECT_NAME:-$(basename "$PROJECT_ROOT")}"
 
 # Load environment variables (if they exist)
 [ -f .env ] && dotenv
